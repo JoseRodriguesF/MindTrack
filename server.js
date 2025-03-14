@@ -1,4 +1,4 @@
-import express from 'express';
+import express from 'express'; 
 import cors from 'cors';
 import dotenv from 'dotenv';
 import path, { dirname } from 'path';
@@ -16,11 +16,6 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
-// Rotas estáticas para páginas HTML
-app.get('/register', (req, res) => res.sendFile(path.join(__dirname, 'pages', 'registro.html')));
-app.get('/login', (req, res) => res.sendFile(path.join(__dirname, 'pages', 'login.html')));
-
-// Rotas da API
 app.use('/api', chatRoutes);
 app.use('/auth', authRoutes);
 
